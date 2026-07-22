@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Junior Talents | منصة المبدعين الصغار</title>
+    <!-- FontAwesome للأيقونات -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- خط Tajawal من Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-color: #4A90E2;
+            --secondary-color: #FF6B6B;
+            --accent-color: #FFD166;
+            --dark-color: #2D3142;
+            --light-bg: #F8F9FA;
+            --white: #FFFFFF;
+            --card-shadow: 0 10px 20px rgba(0,0,0,0.05);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Tajawal', sans-serif;
+        }
+
+        body {
+            background-color: var(--light-bg);
+            color: var(--dark-color);
+            line-height: 1.6;
+        }
+
+        /* Navbar */
+        header {
+            background: var(--white);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+        }
+
+        .logo {
+            font-size: 1.6rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 20px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark-color);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 0.6rem 1.4rem;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 700;
+            border: none;
+            cursor: pointer;
+            transition: transform 0.2s, background 0.3s;
+        }
+
+        .btn-primary:hover {
+            background-color: #357ABD;
+            transform: translateY(-2px);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #EBF4FF 0%, #E6F0FA 100%);
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 2.8rem;
+            margin-bottom: 1rem;
+            color: var(--dark-color);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: #6C757D;
+            margin-bottom: 2rem;
+        }
+
+        /* Services Section */
+        .services {
+            max-width: 1200px;
+            margin: 4rem auto;
+            padding: 0 2rem;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background: var(--secondary-color);
+            margin: 10px auto 0;
+            border-radius: 2px;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: var(--white);
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: var(--card-shadow);
+            transition: transform 0.3s;
+            text-align: center;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .icon-box {
+            width: 70px;
+            height: 70px;
+            background: #EBF4FF;
+            color: var(--primary-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            margin: 0 auto 1.5rem;
+        }
+
+        .service-card h3 {
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .service-card p {
+            color: #6C757D;
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Audio & Gallery Preview */
+        .preview-box {
+            background: var(--light-bg);
+            padding: 1rem;
+            border-radius: 10px;
+            margin-top: 1rem;
+        }
+
+        audio {
+            width: 100%;
+            margin-top: 0.5rem;
+        }
+
+        /* Order Form Section */
+        .order-section {
+            background: var(--white);
+            max-width: 800px;
+            margin: 4rem auto;
+            padding: 3rem 2rem;
+            border-radius: 20px;
+            box-shadow: var(--card-shadow);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+            text-align: right;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+        }
+
+        .form-group input, 
+        .form-group select, 
+        .form-group textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #DDD;
+            border-radius: 8px;
+            font-size: 1rem;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark-color);
+            color: var(--white);
+            text-align: center;
+            padding: 2rem;
+            margin-top: 4rem;
+        }
+
+        .payoneer-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255,255,255,0.1);
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            margin-top: 1rem;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header / Navbar -->
+    <header>
+        <div class="navbar">
+            <div class="logo">
+                <i class="fa-solid fa-rocket"></i> Junior Talents
+            </div>
+            <ul class="nav-links">
+                <li><a href="#services">الخدمات</a></li>
+                <li><a href="#portfolio">معرض الأعمال</a></li>
+                <li><a href="#order">طلب خدمة</a></li>
+            </ul>
+            <a href="#order" class="btn-primary">ابدأ مشروعك معنا</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>إبداع بلا حدود بأيدي الناشئين! 🎨🎙️</h1>
+            <p>نقدم خدمات احترافية في التعليق الصوتي للأطفال، الرسم والتصميم المخصص، وبرمجة الألعاب البسيطة بأعلى جودة وشغف.</p>
+            <a href="#services" class="btn-primary" style="padding: 0.8rem 2rem; font-size: 1.1rem;">استكشف خدماتنا</a>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <h2 class="section-title">خدماتنا المتميزة</h2>
+        <div class="services-grid">
+            
+            <!-- Service 1: Voiceover -->
+            <div class="service-card">
+                <div class="icon-box"><i class="fa-solid fa-microphone"></i></div>
+                <h3>التعليق الصوتي الاحترافي</h3>
+                <p>تسجيلات صوتية مميزة ومبدعة للقصص المصورة، الإعلانات، والمحتوى التعليمي الموجه للأطفال.</p>
+                <div class="preview-box">
+                    <span>عينات صوتية:</span>
+                    <audio controls>
+                        <source src="sample-voice.mp3" type="audio/mpeg">
+                        متصفحك لا يدعم مشغل الصوت.
+                    </audio>
+                </div>
+            </div>
+
+            <!-- Service 2: Digital Art -->
+            <div class="service-card">
+                <div class="icon-box"><i class="fa-solid fa-palette"></i></div>
+                <h3>الرسم والتصميم المخصص</h3>
+                <p>رسم شخصيات كرتونية فريدة، غلاف كتب، وصور بروفايل مخصصة حسب طلبك بألوان مبهجة.</p>
+                <div class="preview-box">
+                    <span>رسومات وستيكرات مخصصة بحب 🎨</span>
+                </div>
+            </div>
+
+            <!-- Service 3: Game Dev -->
+            <div class="service-card">
+                <div class="icon-box"><i class="fa-solid fa-gamepad"></i></div>
+                <h3>برمجة الألعاب البسيطة</h3>
+                <p>تطوير ألعاب إبداعية ممتعة وتفاعلية على منصات Scratch و Roblox جاهزة للتجربة.</p>
+                <div class="preview-box">
+                    <span>ألعاب مخصصة وأكواد تفاعلية 🕹️</span>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Order Form Section -->
+    <section class="order-section" id="order">
+        <h2 class="section-title">طلب خدمة جديدة</h2>
+        <form id="serviceOrderForm">
+            <div class="form-group">
+                <label for="name">الاسم الكريم:</label>
+                <input type="text" id="name" required placeholder="أدخل اسمك هنا">
+            </div>
+            
+            <div class="form-group">
+                <label for="email">البريد الإلكتروني:</label>
+                <input type="email" id="email" required placeholder="example@domain.com">
+            </div>
+
+            <div class="form-group">
+                <label for="serviceType">اختر الخدمة:</label>
+                <select id="serviceType">
+                    <option value="voiceover">تعليق صوتي (Voiceover)</option>
+                    <option value="art">رسم وتصميم مخصص</option>
+                    <option value="game">برمجة لعبة بسيطة</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="details">تفاصيل الطلب:</label>
+                <textarea id="details" rows="4" placeholder="اكتب التفاصيل أو النص المطلوب تسجيله/رسمه..."></textarea>
+            </div>
+
+            <button type="submit" class="btn-primary" style="width: 100%; padding: 1rem;">إرسال الطلب والاستمرار للدفع</button>
+        </form>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Junior Talents - جميع الحقوق محفوظة</p>
+        <div class="payoneer-tag">
+            <i class="fa-solid fa-shield-halved"></i> مدعوم بالدفع الآمن عبر Payoneer
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('serviceOrderForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('تم استلام طلبك بنجاح! سيتم التواصل معك لتأكيد التفاصيل ورابط الدفع.');
+        });
+    </script>
+</body>
+</html>
