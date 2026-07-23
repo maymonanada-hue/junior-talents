@@ -87,6 +87,7 @@
             border: none;
             cursor: pointer;
             transition: transform 0.2s, background 0.3s;
+            display: inline-block;
         }
 
         .btn-primary:hover {
@@ -110,6 +111,7 @@
             font-size: 2.8rem;
             margin-bottom: 1rem;
             color: var(--dark-color);
+            font-weight: 800;
         }
 
         .hero p {
@@ -118,8 +120,8 @@
             margin-bottom: 2rem;
         }
 
-        /* Services Section */
-        .services {
+        /* Sections Common */
+        .services, .metaverse-section {
             max-width: 1200px;
             margin: 4rem auto;
             padding: 0 2rem;
@@ -130,6 +132,7 @@
             font-size: 2rem;
             margin-bottom: 3rem;
             position: relative;
+            font-weight: 800;
         }
 
         .section-title::after {
@@ -142,6 +145,7 @@
             border-radius: 2px;
         }
 
+        /* Services Grid */
         .services-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -155,6 +159,7 @@
             box-shadow: var(--card-shadow);
             transition: transform 0.3s;
             text-align: center;
+            border: 1px solid #EAEFF5;
         }
 
         .service-card:hover {
@@ -198,6 +203,122 @@
             margin-top: 0.5rem;
         }
 
+        /* Video Showcase Area */
+        .game-wrapper {
+            background: var(--white);
+            border-radius: 24px;
+            padding: 3rem 2rem;
+            box-shadow: var(--card-shadow);
+            border: 1px solid #EAEFF5;
+            text-align: center;
+        }
+
+        .video-container {
+            max-width: 850px;
+            margin: 2rem auto;
+            background: #000;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+            height: 0;
+        }
+
+        .video-container video, .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* Pricing Grid */
+        .pricing-grid {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 2.5rem;
+        }
+
+        .price-card {
+            background: var(--white);
+            border-radius: 20px;
+            padding: 2.5rem 2rem;
+            width: 300px;
+            border: 2px solid #EAEFF5;
+            box-shadow: var(--card-shadow);
+            text-align: center;
+            position: relative;
+            transition: transform 0.3s;
+        }
+
+        .price-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .price-card.featured {
+            border-color: var(--primary-color);
+        }
+
+        .badge {
+            position: absolute;
+            top: -14px;
+            right: 50%;
+            transform: translateX(50%);
+            background: var(--accent-color);
+            color: #000;
+            padding: 4px 14px;
+            border-radius: 12px;
+            font-size: 0.85rem;
+            font-weight: 700;
+        }
+
+        .price {
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: var(--dark-color);
+            margin: 1rem 0;
+        }
+
+        .features-list {
+            list-style: none;
+            text-align: right;
+            margin-bottom: 2rem;
+            line-height: 2.2;
+            color: #5A6A85;
+            font-size: 0.95rem;
+        }
+
+        /* Download Store Buttons */
+        .download-badges {
+            display: flex;
+            justify-content: center;
+            gap: 1.2rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .store-btn {
+            background: var(--dark-color);
+            color: var(--white);
+            padding: 0.7rem 1.4rem;
+            border-radius: 12px;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: transform 0.2s;
+        }
+
+        .store-btn:hover { transform: translateY(-3px); }
+        .store-btn i { font-size: 1.6rem; }
+        .store-btn div { text-align: right; }
+        .store-btn div span { display: block; font-size: 0.7rem; opacity: 0.8; }
+        .store-btn div strong { font-size: 0.95rem; }
+
         /* Order Form Section */
         .order-section {
             background: var(--white);
@@ -206,6 +327,7 @@
             padding: 3rem 2rem;
             border-radius: 20px;
             box-shadow: var(--card-shadow);
+            border: 1px solid #EAEFF5;
         }
 
         .form-group {
@@ -260,7 +382,7 @@
             </div>
             <ul class="nav-links">
                 <li><a href="#services">الخدمات</a></li>
-                <li><a href="#portfolio">معرض الأعمال</a></li>
+                <li><a href="#game-project">اللعبة القيمية</a></li>
                 <li><a href="#order">طلب خدمة</a></li>
             </ul>
             <a href="#order" class="btn-primary">ابدأ مشروعك معنا</a>
@@ -318,6 +440,78 @@
         </div>
     </section>
 
+    <!-- Project Showcase: Metaverse Islamic Game -->
+    <section class="metaverse-section" id="game-project">
+        <div class="game-wrapper">
+            <h2 class="section-title">🎮 مشروع الميتافيرس التعليمي والقيمي</h2>
+            <p style="color: #6C757D; max-width: 750px; margin: 0 auto;">شاهد في دقيقة واحدة كيف تنقل هذه اللعبة أطفالك إلى عالم إسلامي آمن يرسخ العبادات والأخلاق ومسؤوليات الحياة اليومية.</p>
+
+            <!-- Video Section -->
+            <div class="video-container">
+                <video controls poster="https://via.placeholder.com/1280x720.png?text=معاينة+فيديو+اللعبة+الإسلامية+القيمية">
+                    <source src="game-trailer.mp4" type="video/mp4">
+                    متصفحك لا يدعم تشغيل الفيديو.
+                </video>
+            </div>
+
+            <!-- Download Buttons -->
+            <div class="download-badges">
+                <a href="#" class="store-btn">
+                    <i class="fa-brands fa-google-play"></i>
+                    <div>
+                        <span>حمل التطبيق من</span>
+                        <strong>Google Play</strong>
+                    </div>
+                </a>
+                <a href="#" class="store-btn">
+                    <i class="fa-brands fa-apple"></i>
+                    <div>
+                        <span>حمل التطبيق من</span>
+                        <strong>App Store</strong>
+                    </div>
+                </a>
+                <a href="#" class="store-btn" style="background: var(--primary-color);">
+                    <i class="fa-brands fa-windows"></i>
+                    <div>
+                        <span>نسخة الكمبيوتر</span>
+                        <strong>Windows PC</strong>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Subscriptions Area -->
+            <div style="margin-top: 4rem;">
+                <h3 style="font-size: 1.6rem; color: var(--dark-color);">اختر خطة الاشتراك وانضم للمدينة</h3>
+                <div class="pricing-grid">
+                    
+                    <div class="price-card">
+                        <h4 style="color: var(--primary-color); font-size: 1.3rem;">الاشتراك الشهري</h4>
+                        <div class="price">$9.99 <span style="font-size: 0.9rem; font-weight: normal; color: #7A8B9E;">/ شهرياً</span></div>
+                        <ul class="features-list">
+                            <li>✅ دخول كامل لمدينة الميتافيرس</li>
+                            <li>✅ أنشطة قيمية وتعليمية يومية</li>
+                            <li>✅ بيئة آمنة وخالية من الإعلانات</li>
+                        </ul>
+                        <button onclick="subscribe('Monthly')" class="btn-primary" style="width: 100%;">اشترك الآن (Payoneer)</button>
+                    </div>
+
+                    <div class="price-card featured">
+                        <span class="badge">الأكثر توفيراً ⭐</span>
+                        <h4 style="color: var(--dark-color); font-size: 1.3rem;">الاشتراك السنوي</h4>
+                        <div class="price">$89.99 <span style="font-size: 0.9rem; font-weight: normal; color: #7A8B9E;">/ سنوياً</span></div>
+                        <ul class="features-list">
+                            <li>✅ كل مميزات الباقة الشهرية</li>
+                            <li>✅ خصم خاص لحسابين للأطفال</li>
+                            <li>✅ هدايا وسكنات (Skins) مجانية</li>
+                        </ul>
+                        <button onclick="subscribe('Yearly')" class="btn-primary" style="width: 100%; background: #FF6B6B;">اشترك سنوياً ووفر 25%</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Order Form Section -->
     <section class="order-section" id="order">
         <h2 class="section-title">طلب خدمة جديدة</h2>
@@ -359,6 +553,10 @@
     </footer>
 
     <script>
+        function subscribe(plan) {
+            alert('تم اختيار باقة: ' + plan + ' - سيتم توجيهك لبوابة Payoneer لاتمام الاشتراك.');
+        }
+
         document.getElementById('serviceOrderForm').addEventListener('submit', function(e) {
             e.preventDefault();
             alert('تم استلام طلبك بنجاح! سيتم التواصل معك لتأكيد التفاصيل ورابط الدفع.');
