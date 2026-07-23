@@ -31,6 +31,7 @@
             background-color: var(--light-bg);
             color: var(--dark-color);
             line-height: 1.6;
+            overflow-x: hidden; /* لمنع التمرير الأفقي في الجوال */
         }
 
         /* Navbar */
@@ -48,16 +49,16 @@
             align-items: center;
             max-width: 1200px;
             margin: 0 auto;
-            padding: 1rem 2rem;
+            padding: 1rem 1.5rem;
         }
 
         .logo {
-            font-size: 1.6rem;
+            font-size: 1.5rem;
             font-weight: 800;
             color: var(--primary-color);
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 8px;
         }
 
         .nav-links {
@@ -88,6 +89,7 @@
             cursor: pointer;
             transition: transform 0.2s, background 0.3s;
             display: inline-block;
+            text-align: center;
         }
 
         .btn-primary:hover {
@@ -98,7 +100,7 @@
         /* Hero Section */
         .hero {
             background: linear-gradient(135deg, #EBF4FF 0%, #E6F0FA 100%);
-            padding: 4rem 2rem;
+            padding: 4rem 1.5rem;
             text-align: center;
         }
 
@@ -108,14 +110,14 @@
         }
 
         .hero h1 {
-            font-size: 2.8rem;
+            font-size: 2.5rem;
             margin-bottom: 1rem;
             color: var(--dark-color);
             font-weight: 800;
         }
 
         .hero p {
-            font-size: 1.2rem;
+            font-size: 1.15rem;
             color: #6C757D;
             margin-bottom: 2rem;
         }
@@ -123,14 +125,14 @@
         /* Sections Common */
         .services, .metaverse-section {
             max-width: 1200px;
-            margin: 4rem auto;
-            padding: 0 2rem;
+            margin: 3rem auto;
+            padding: 0 1.5rem;
         }
 
         .section-title {
             text-align: center;
             font-size: 2rem;
-            margin-bottom: 3rem;
+            margin-bottom: 2.5rem;
             position: relative;
             font-weight: 800;
         }
@@ -148,14 +150,14 @@
         /* Services Grid */
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
         }
 
         .service-card {
             background: var(--white);
             border-radius: 15px;
-            padding: 2rem;
+            padding: 2rem 1.5rem;
             box-shadow: var(--card-shadow);
             transition: transform 0.3s;
             text-align: center;
@@ -190,7 +192,7 @@
             margin-bottom: 1.5rem;
         }
 
-        /* Audio & Gallery Preview */
+        /* Preview Box */
         .preview-box {
             background: var(--light-bg);
             padding: 1rem;
@@ -207,7 +209,7 @@
         .game-wrapper {
             background: var(--white);
             border-radius: 24px;
-            padding: 3rem 2rem;
+            padding: 2.5rem 1.5rem;
             box-shadow: var(--card-shadow);
             border: 1px solid #EAEFF5;
             text-align: center;
@@ -237,7 +239,7 @@
         /* Pricing Grid */
         .pricing-grid {
             display: flex;
-            gap: 2rem;
+            gap: 1.5rem;
             justify-content: center;
             flex-wrap: wrap;
             margin-top: 2.5rem;
@@ -246,8 +248,9 @@
         .price-card {
             background: var(--white);
             border-radius: 20px;
-            padding: 2.5rem 2rem;
-            width: 300px;
+            padding: 2.5rem 1.5rem;
+            width: 100%;
+            max-width: 320px;
             border: 2px solid #EAEFF5;
             box-shadow: var(--card-shadow);
             text-align: center;
@@ -274,6 +277,7 @@
             border-radius: 12px;
             font-size: 0.85rem;
             font-weight: 700;
+            white-space: nowrap;
         }
 
         .price {
@@ -296,7 +300,7 @@
         .download-badges {
             display: flex;
             justify-content: center;
-            gap: 1.2rem;
+            gap: 1rem;
             margin-top: 2rem;
             flex-wrap: wrap;
         }
@@ -304,27 +308,28 @@
         .store-btn {
             background: var(--dark-color);
             color: var(--white);
-            padding: 0.7rem 1.4rem;
+            padding: 0.7rem 1.2rem;
             border-radius: 12px;
             text-decoration: none;
             display: flex;
             align-items: center;
             gap: 10px;
             transition: transform 0.2s;
+            min-width: 160px;
         }
 
         .store-btn:hover { transform: translateY(-3px); }
         .store-btn i { font-size: 1.6rem; }
         .store-btn div { text-align: right; }
         .store-btn div span { display: block; font-size: 0.7rem; opacity: 0.8; }
-        .store-btn div strong { font-size: 0.95rem; }
+        .store-btn div strong { font-size: 0.9rem; }
 
         /* Order Form Section */
         .order-section {
             background: var(--white);
             max-width: 800px;
-            margin: 4rem auto;
-            padding: 3rem 2rem;
+            margin: 3rem auto;
+            padding: 2.5rem 1.5rem;
             border-radius: 20px;
             box-shadow: var(--card-shadow);
             border: 1px solid #EAEFF5;
@@ -356,8 +361,8 @@
             background: var(--dark-color);
             color: var(--white);
             text-align: center;
-            padding: 2rem;
-            margin-top: 4rem;
+            padding: 2rem 1rem;
+            margin-top: 3rem;
         }
 
         .payoneer-tag {
@@ -369,6 +374,46 @@
             border-radius: 20px;
             font-size: 0.85rem;
             margin-top: 1rem;
+        }
+
+        /* 📱 تحسينات خاصة بالشاشات الصغيرة (الجوال والتابلت) */
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                gap: 15px;
+                padding: 1rem;
+            }
+
+            .nav-links {
+                gap: 12px;
+                font-size: 0.9rem;
+            }
+
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .section-title {
+                font-size: 1.6rem;
+            }
+
+            .store-btn {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .download-badges {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .game-wrapper {
+                padding: 1.5rem 1rem;
+            }
         }
     </style>
 </head>
@@ -480,8 +525,8 @@
             </div>
 
             <!-- Subscriptions Area -->
-            <div style="margin-top: 4rem;">
-                <h3 style="font-size: 1.6rem; color: var(--dark-color);">اختر خطة الاشتراك وانضم للمدينة</h3>
+            <div style="margin-top: 3.5rem;">
+                <h3 style="font-size: 1.5rem; color: var(--dark-color);">اختر خطة الاشتراك وانضم للمدينة</h3>
                 <div class="pricing-grid">
                     
                     <div class="price-card">
